@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists - Musicify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader"><div class="equalizer"><span></span><span></span><span></span><span></span><span></span></div><h2>Musicify</h2></div>
+    <div class="bg-glow blur-1"></div><div class="bg-glow blur-2"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-music"></i> Musicify</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trending.html">Trending</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="artists.html" class="active">Artists</a></li>
+                <li><a href="albums.html">Albums</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="search-box"><i class="fa-solid fa-search"></i><input type="text" placeholder="Search music..."></div>
+                <button class="btn-login" id="loginBtn">Login / Sign Up</button>
+                <div class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <!-- Sidebar content same as others -->
+        <div class="sidebar-header">
+            <a href="index.html" class="logo"><i class="fa-solid fa-music"></i> Musicify</a>
+            <i class="fa-solid fa-times close-btn" id="closeSidebar"></i>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trending.html">Trending</a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="albums.html">Albums</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn-login sidebar-login" id="sidebarLoginBtn">Login / Sign Up</button>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-content glass-effect">
+            <i class="fa-solid fa-times close-modal" id="closeModal"></i>
+            <h2 class="modal-title">Welcome to Musicify</h2>
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+            <form id="loginForm" class="auth-form active">
+                <div class="input-group"><input type="email" placeholder="Email" required><i class="fa-solid fa-envelope"></i></div>
+                <div class="input-group"><input type="password" placeholder="Password" required><i class="fa-solid fa-lock"></i></div>
+                <button type="submit" class="btn-primary full-width">Login</button>
+            </form>
+            <form id="signupForm" class="auth-form">
+                <div class="input-group"><input type="text" placeholder="Username" required><i class="fa-solid fa-user"></i></div>
+                <div class="input-group"><input type="email" placeholder="Email" required><i class="fa-solid fa-envelope"></i></div>
+                <div class="input-group"><input type="password" placeholder="Password" required><i class="fa-solid fa-lock"></i></div>
+                <div class="input-group"><input type="password" placeholder="Confirm Password" required><i class="fa-solid fa-lock"></i></div>
+                <button type="submit" class="btn-primary full-width">Sign Up</button>
+                <div class="divider"><span>OR</span></div>
+                <button type="button" class="btn-google">
+                    <i class="fa-brands fa-google"></i> Continue with Google
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Title Section -->
+        <section class="artist-page-hero section-padding reveal">
+            <div class="artist-header">
+                <h1>Featured <span class="text-green">Artists</span></h1>
+                <p>Discover the journey and top hits behind the biggest names in the music industry.</p>
+            </div>
+            
+            <!-- Artists Big Grid -->
+            <div class="artist-hero-grid">
+                
+                <!-- Taylor Swift -->
+                <div class="artist-hero-card" data-artist="taylor">
+                    <img src="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?q=80&w=800&auto=format&fit=crop" alt="Taylor Swift">
+                    <div class="artist-hero-overlay">
+                        <h2>Taylor Swift</h2>
+                        <p>Pop / Country Pop</p>
+                        <button class="btn-primary mt-1 view-artist-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- The Weeknd -->
+                <div class="artist-hero-card" data-artist="weeknd">
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop" alt="The Weeknd">
+                    <div class="artist-hero-overlay">
+                        <h2>The Weeknd</h2>
+                        <p>R&B / Synth-Pop</p>
+                        <button class="btn-primary mt-1 view-artist-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Billie Eilish -->
+                <div class="artist-hero-card" data-artist="billie">
+                    <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=800&auto=format&fit=crop" alt="Billie Eilish">
+                    <div class="artist-hero-overlay">
+                        <h2>Billie Eilish</h2>
+                        <p>Alternative Pop</p>
+                        <button class="btn-primary mt-1 view-artist-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Drake -->
+                <div class="artist-hero-card" data-artist="drake">
+                    <img src="https://images.unsplash.com/photo-1549834125-82d3c48159a3?q=80&w=800&auto=format&fit=crop" alt="Drake">
+                    <div class="artist-hero-overlay">
+                        <h2>Drake</h2>
+                        <p>Hip Hop / R&B</p>
+                        <button class="btn-primary mt-1 view-artist-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Arctic Monkeys -->
+                <div class="artist-hero-card" data-artist="arctic">
+                    <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=800&auto=format&fit=crop" alt="Arctic Monkeys">
+                    <div class="artist-hero-overlay">
+                        <h2>Arctic Monkeys</h2>
+                        <p>Indie Rock</p>
+                        <button class="btn-primary mt-1 view-artist-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden Data for Artists -->
+        <div id="artist-data-store" style="display: none;">
+            <div id="data-taylor">
+                <span class="d-born">December 13, 1989</span>
+                <span class="d-career">Taylor Swift memulai kariernya di musik country pada usia 14 tahun sebelum bertransisi menjadi salah satu bintang pop terbesar dalam sejarah. Ia dikenal dengan gaya penulisan lagunya yang sangat personal dan naratif, yang sering kali mengambil inspirasi dari kehidupan pribadinya. Swift telah memenangkan banyak Grammy Awards, termasuk tiga penghargaan Album of the Year, dan merupakan artis wanita pertama yang mencapai prestasi tersebut. Selama lebih dari satu dekade, ia telah mendominasi tangga lagu global, meluncurkan tur stadion yang memecahkan rekor dunia, dan baru-baru ini ia merekam ulang album-album lamanya (Taylor's Version) untuk mendapatkan kembali hak master atas musiknya sendiri.</span>
+                <div class="d-songs">
+                    <div class="song-item play-trigger" data-song="Cruel Summer" data-artist="Taylor Swift" data-cover="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>Cruel Summer</h4><p>Lover</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="song-item play-trigger" data-song="Anti-Hero" data-artist="Taylor Swift" data-cover="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>Anti-Hero</h4><p>Midnights</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="data-weeknd">
+                <span class="d-born">February 16, 1990</span>
+                <span class="d-career">Abel Tesfaye, yang lebih dikenal sebagai The Weeknd, adalah penyanyi, penulis lagu, dan produser rekaman asal Kanada. Ia pertama kali mendapat perhatian luas pada tahun 2010 setelah mengunggah secara anonim beberapa lagu ke YouTube. Kariernya meledak melalui mixtape yang dipuji kritis, yang kemudian dirilis ulang sebagai album kompilasi 'Trilogy'. The Weeknd merevolusi musik R&B kontemporer dengan memadukan unsur pop, synth-wave era 80-an, dan lirik yang gelap. Albumnya 'After Hours' menampilkan hit global "Blinding Lights", yang memecahkan rekor sebagai lagu yang paling lama bertahan di Billboard Hot 100 dan menjadikannya ikon musik pop global yang tampil di Super Bowl Halftime Show.</span>
+                <div class="d-songs">
+                    <div class="song-item play-trigger" data-song="Starboy" data-artist="The Weeknd" data-cover="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>Starboy</h4><p>Starboy</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="song-item play-trigger" data-song="Blinding Lights" data-artist="The Weeknd" data-cover="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>Blinding Lights</h4><p>After Hours</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="data-billie">
+                <span class="d-born">December 18, 2001</span>
+                <span class="d-career">Billie Eilish Pirate Baird O'Connell adalah fenomena musik pop yang merevolusi industri dengan suaranya yang unik dan berbisik. Bersama kakak laki-lakinya, Finneas, yang memproduksi musiknya di kamar tidur mereka, Eilish meraih ketenaran viral dengan singel debutnya "Ocean Eyes" pada usia 14 tahun. Album debutnya, "When We All Fall Asleep, Where Do We Go?" sukses besar dan menjadikannya artis termuda yang memenangkan empat kategori utama Grammy Awards dalam satu tahun yang sama. Gaya fashionnya yang nyentrik dan lirik lagu yang jujur mengenai kesehatan mental membuatnya menjadi suara generasi Z. Eilish juga merupakan penyanyi termuda yang menulis dan membawakan lagu tema untuk film James Bond, "No Time to Die", yang memenangkan Academy Award.</span>
+                <div class="d-songs">
+                    <div class="song-item play-trigger" data-song="bad guy" data-artist="Billie Eilish" data-cover="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>bad guy</h4><p>When We All Fall Asleep...</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="song-item play-trigger" data-song="Happier Than Ever" data-artist="Billie Eilish" data-cover="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>Happier Than Ever</h4><p>Happier Than Ever</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="data-drake">
+                <span class="d-born">October 24, 1986</span>
+                <span class="d-career">Aubrey Drake Graham berawal sebagai aktor di serial televisi remaja Kanada "Degrassi: The Next Generation" sebelum banting setir menjadi salah satu rapper dan artis hip-hop paling sukses sepanjang masa. Setelah merilis serangkaian mixtape yang sukses, Drake mendirikan label rekamannya OVO Sound. Ia dikenal dengan kemampuannya memadukan rap dengan nyanyian R&B, menciptakan tren melodi rap yang mendominasi dekade 2010-an. Dengan segudang rekor Billboard, multi-platinum album seperti "Take Care" dan "Views", serta lagu-lagu hits yang merajai kelab dan radio di seluruh dunia, Drake telah menetapkan dirinya sebagai salah satu musisi terlaris di dunia. Kolaborasinya lintas genre juga menjadikannya sangat fleksibel dalam industri musik modern.</span>
+                <div class="d-songs">
+                    <div class="song-item play-trigger" data-song="God's Plan" data-artist="Drake" data-cover="https://images.unsplash.com/photo-1549834125-82d3c48159a3?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1549834125-82d3c48159a3?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>God's Plan</h4><p>Scorpion</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="song-item play-trigger" data-song="Hotline Bling" data-artist="Drake" data-cover="https://images.unsplash.com/photo-1549834125-82d3c48159a3?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1549834125-82d3c48159a3?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>Hotline Bling</h4><p>Views</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="data-arctic">
+                <span class="d-born">Formed in 2002</span>
+                <span class="d-career">Arctic Monkeys adalah band rock indie asal Sheffield, Inggris, yang dibentuk oleh Alex Turner, Jamie Cook, Nick O'Malley, dan Matt Helders. Mereka dijuluki sebagai "band internet pertama yang sukses" karena popularitas awal mereka meledak melalui Myspace sebelum menandatangani kontrak label rekaman. Album debut mereka, "Whatever People Say I Am, That's What I'm Not" (2006), menjadi album debut dengan penjualan tercepat dalam sejarah Inggris. Musik mereka terus berevolusi, dari post-punk revival yang kasar menjadi rock alternatif yang matang dan sinematik di album legendaris "AM" (2013). Kejeniusan lirik Alex Turner dan kemampuan band untuk terus merombak suara mereka telah mempertahankan Arctic Monkeys sebagai salah satu band rock terbesar abad ke-21.</span>
+                <div class="d-songs">
+                    <div class="song-item play-trigger" data-song="Do I Wanna Know?" data-artist="Arctic Monkeys" data-cover="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>Do I Wanna Know?</h4><p>AM</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="song-item play-trigger" data-song="505" data-artist="Arctic Monkeys" data-cover="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=100&auto=format&fit=crop">
+                        <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=100&auto=format&fit=crop" class="song-cover">
+                        <div class="song-details"><h4>505</h4><p>Favourite Worst Nightmare</p></div>
+                        <button class="play-btn-small"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Detail Modal -->
+        <div class="artist-detail-overlay" id="artistModal">
+            <div class="artist-detail-content glass-effect">
+                <i class="fa-solid fa-times close-artist-modal" id="closeArtistModal"></i>
+                
+                <div class="artist-detail-layout">
+                    <!-- Left: Big Image -->
+                    <div class="artist-detail-image">
+                        <img src="" alt="Artist" id="modalArtistImg">
+                    </div>
+                    
+                    <!-- Right: Info -->
+                    <div class="artist-detail-info">
+                        <h2 id="modalArtistName">Artist Name</h2>
+                        <div class="artist-badges">
+                            <span class="badge" id="modalArtistGenre">Pop</span>
+                            <span class="badge"><i class="fa-solid fa-cake-candles"></i> <span id="modalArtistBorn"></span></span>
+                            <span class="badge"><i class="fa-solid fa-certificate"></i> Verified Artist</span>
+                        </div>
+                        
+                        <div class="career-section">
+                            <h3><i class="fa-solid fa-book-open"></i> Career Journey</h3>
+                            <p id="modalArtistCareer">Career details will go here...</p>
+                        </div>
+                        
+                        <div class="top-tracks-section">
+                            <h3><i class="fa-solid fa-fire"></i> Top Tracks</h3>
+                            <div class="song-list" id="modalArtistSongs">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo"><i class="fa-solid fa-music"></i> Musicify</a>
+                <p>Feel the music, anywhere, anytime. The premium streaming experience designed for you.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">For the Record</a>
+                </div>
+                <div class="link-group">
+                    <h4>Communities</h4>
+                    <a href="#">For Artists</a>
+                    <a href="#">Developers</a>
+                    <a href="#">Advertising</a>
+                    <a href="#">Investors</a>
+                </div>
+                <div class="link-group">
+                    <h4>Useful Links</h4>
+                    <a href="#">Support</a>
+                    <a href="#">Web Player</a>
+                    <a href="#">Free Mobile App</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Musicify. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Legal</a>
+                <a href="#">Privacy Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Music Player -->
+    <div class="music-player glass-effect" id="musicPlayer">
+        <!-- Player internals skipped for brevity (assuming player is globally present) -->
+        <div class="player-info">
+            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=100&auto=format&fit=crop" alt="Now Playing" id="playerCover">
+            <div class="playing-details">
+                <h4 id="playerTitle">Starboy</h4>
+                <p id="playerArtist">The Weeknd</p>
+            </div>
+            <i class="fa-regular fa-heart like-btn"></i>
+        </div>
+        <div class="player-controls-wrapper">
+            <div class="player-controls">
+                <button><i class="fa-solid fa-shuffle"></i></button>
+                <button><i class="fa-solid fa-backward-step"></i></button>
+                <button class="play-pause-btn" id="mainPlayBtn"><i class="fa-solid fa-play"></i></button>
+                <button><i class="fa-solid fa-forward-step"></i></button>
+                <button><i class="fa-solid fa-repeat"></i></button>
+            </div>
+            <div class="player-progress">
+                <span class="time-current">1:04</span>
+                <div class="progress-bar"><div class="progress-current" style="width: 30%;"></div></div>
+                <span class="time-total">3:50</span>
+            </div>
+        </div>
+        <div class="player-actions">
+            <i class="fa-solid fa-microphone"></i>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-volume-high"></i>
+            <div class="volume-bar"><div class="volume-current" style="width: 70%;"></div></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

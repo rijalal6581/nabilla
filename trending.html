@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending - Musicify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="equalizer">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h2>Musicify</h2>
+    </div>
+
+    <!-- Background Blur Effect -->
+    <div class="bg-glow blur-1"></div>
+    <div class="bg-glow blur-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-music"></i> Musicify
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trending.html" class="active">Trending</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="albums.html">Albums</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search music...">
+                </div>
+                <button class="btn-login" id="loginBtn">Login / Sign Up</button>
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo"><i class="fa-solid fa-music"></i> Musicify</a>
+            <i class="fa-solid fa-times close-btn" id="closeSidebar"></i>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trending.html">Trending</a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="albums.html">Albums</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn-login sidebar-login" id="sidebarLoginBtn">Login / Sign Up</button>
+    </div>
+
+    <!-- Auth Modal (same as index.html) -->
+    <!-- ... skipped for brevity in this raw file, we will focus on main ... -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-content glass-effect">
+            <i class="fa-solid fa-times close-modal" id="closeModal"></i>
+            <h2 class="modal-title">Welcome to Musicify</h2>
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+            <form id="loginForm" class="auth-form active">
+                <div class="input-group"><input type="email" placeholder="Email" required><i class="fa-solid fa-envelope"></i></div>
+                <div class="input-group"><input type="password" placeholder="Password" required><i class="fa-solid fa-lock"></i></div>
+                <button type="submit" class="btn-primary full-width">Login</button>
+            </form>
+            <form id="signupForm" class="auth-form">
+                <div class="input-group"><input type="text" placeholder="Username" required><i class="fa-solid fa-user"></i></div>
+                <div class="input-group"><input type="email" placeholder="Email" required><i class="fa-solid fa-envelope"></i></div>
+                <div class="input-group"><input type="password" placeholder="Password" required><i class="fa-solid fa-lock"></i></div>
+                <div class="input-group"><input type="password" placeholder="Confirm Password" required><i class="fa-solid fa-lock"></i></div>
+                <button type="submit" class="btn-primary full-width">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <!-- Trending Page Header -->
+        <section class="trending-header section-padding">
+            <div class="header-content reveal">
+                <h1>Global <span class="text-green">Trending</span></h1>
+                <p>The hottest tracks around the world right now. Updated daily.</p>
+            </div>
+        </section>
+
+        <!-- Viral Hits (Movie-like cards) -->
+        <section class="viral-hits section-padding">
+            <div class="section-header reveal">
+                <h2>Viral Hits</h2>
+                <a href="#" class="see-all">Play All <i class="fa-solid fa-play"></i></a>
+            </div>
+            <div class="movie-cards-grid reveal fade-up">
+                <!-- Viral Card 1 -->
+                <div class="movie-card play-trigger" data-song="Water" data-artist="Tyla" data-cover="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600&auto=format&fit=crop" alt="Water">
+                    <div class="movie-card-content">
+                        <div class="viral-badge">#1 VIRAL</div>
+                        <h3>Water</h3>
+                        <p>Tyla</p>
+                        <button class="play-btn-large"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+                <!-- Viral Card 2 -->
+                <div class="movie-card play-trigger" data-song="Greedy" data-artist="Tate McRae" data-cover="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600&auto=format&fit=crop" alt="Greedy">
+                    <div class="movie-card-content">
+                        <div class="viral-badge">#2 VIRAL</div>
+                        <h3>Greedy</h3>
+                        <p>Tate McRae</p>
+                        <button class="play-btn-large"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+                <!-- Viral Card 3 -->
+                <div class="movie-card play-trigger" data-song="Strangers" data-artist="Kenya Grace" data-cover="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop" alt="Strangers">
+                    <div class="movie-card-content">
+                        <div class="viral-badge">#3 VIRAL</div>
+                        <h3>Strangers</h3>
+                        <p>Kenya Grace</p>
+                        <button class="play-btn-large"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top 10 Leaderboard -->
+        <section class="leaderboard section-padding">
+            <div class="section-header reveal">
+                <h2>Top 10 Leaderboard</h2>
+            </div>
+            <div class="leaderboard-list reveal fade-left">
+                <!-- Rank 1 -->
+                <div class="leaderboard-item play-trigger" data-song="Paint The Town Red" data-artist="Doja Cat" data-cover="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=150">
+                    <div class="rank">1</div>
+                    <div class="trend up"><i class="fa-solid fa-caret-up"></i> 2</div>
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=150&auto=format&fit=crop" class="lb-cover" alt="Cover">
+                    <div class="lb-details">
+                        <h4>Paint The Town Red</h4>
+                        <p>Doja Cat</p>
+                    </div>
+                    <div class="lb-streams">15.4M Streams</div>
+                    <button class="lb-play"><i class="fa-solid fa-play"></i></button>
+                </div>
+                
+                <!-- Rank 2 -->
+                <div class="leaderboard-item play-trigger" data-song="Seven" data-artist="Jungkook ft. Latto" data-cover="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=150">
+                    <div class="rank">2</div>
+                    <div class="trend down"><i class="fa-solid fa-caret-down"></i> 1</div>
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=150&auto=format&fit=crop" class="lb-cover" alt="Cover">
+                    <div class="lb-details">
+                        <h4>Seven (feat. Latto)</h4>
+                        <p>Jungkook</p>
+                    </div>
+                    <div class="lb-streams">12.1M Streams</div>
+                    <button class="lb-play"><i class="fa-solid fa-play"></i></button>
+                </div>
+
+                <!-- Rank 3 -->
+                <div class="leaderboard-item play-trigger" data-song="Cruel Summer" data-artist="Taylor Swift" data-cover="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?q=80&w=150">
+                    <div class="rank">3</div>
+                    <div class="trend same"><i class="fa-solid fa-minus"></i></div>
+                    <img src="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?q=80&w=150&auto=format&fit=crop" class="lb-cover" alt="Cover">
+                    <div class="lb-details">
+                        <h4>Cruel Summer</h4>
+                        <p>Taylor Swift</p>
+                    </div>
+                    <div class="lb-streams">10.8M Streams</div>
+                    <button class="lb-play"><i class="fa-solid fa-play"></i></button>
+                </div>
+                
+                <!-- Rank 4 -->
+                <div class="leaderboard-item play-trigger" data-song="Vampire" data-artist="Olivia Rodrigo" data-cover="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=150">
+                    <div class="rank">4</div>
+                    <div class="trend up"><i class="fa-solid fa-caret-up"></i> 5</div>
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=150&auto=format&fit=crop" class="lb-cover" alt="Cover">
+                    <div class="lb-details">
+                        <h4>Vampire</h4>
+                        <p>Olivia Rodrigo</p>
+                    </div>
+                    <div class="lb-streams">9.2M Streams</div>
+                    <button class="lb-play"><i class="fa-solid fa-play"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo"><i class="fa-solid fa-music"></i> Musicify</a>
+                <p>Feel the music, anywhere, anytime. The premium streaming experience designed for you.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">For the Record</a>
+                </div>
+                <div class="link-group">
+                    <h4>Communities</h4>
+                    <a href="#">For Artists</a>
+                    <a href="#">Developers</a>
+                    <a href="#">Advertising</a>
+                    <a href="#">Investors</a>
+                </div>
+                <div class="link-group">
+                    <h4>Useful Links</h4>
+                    <a href="#">Support</a>
+                    <a href="#">Web Player</a>
+                    <a href="#">Free Mobile App</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Musicify. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Legal</a>
+                <a href="#">Privacy Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Music Player -->
+    <div class="music-player glass-effect" id="musicPlayer">
+        <div class="player-info">
+            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=100&auto=format&fit=crop" alt="Now Playing" id="playerCover">
+            <div class="playing-details">
+                <h4 id="playerTitle">Starboy</h4>
+                <p id="playerArtist">The Weeknd</p>
+            </div>
+            <i class="fa-regular fa-heart like-btn"></i>
+        </div>
+        
+        <div class="player-controls-wrapper">
+            <div class="player-controls">
+                <button><i class="fa-solid fa-shuffle"></i></button>
+                <button><i class="fa-solid fa-backward-step"></i></button>
+                <button class="play-pause-btn" id="mainPlayBtn"><i class="fa-solid fa-play"></i></button>
+                <button><i class="fa-solid fa-forward-step"></i></button>
+                <button><i class="fa-solid fa-repeat"></i></button>
+            </div>
+            <div class="player-progress">
+                <span class="time-current">1:04</span>
+                <div class="progress-bar">
+                    <div class="progress-current" style="width: 30%;"></div>
+                </div>
+                <span class="time-total">3:50</span>
+            </div>
+        </div>
+
+        <div class="player-actions">
+            <i class="fa-solid fa-microphone"></i>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-volume-high"></i>
+            <div class="volume-bar">
+                <div class="volume-current" style="width: 70%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
